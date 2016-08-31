@@ -131,11 +131,9 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *now = [NSDate date];
     
-    // 获取前一天的时间
-     now = [now dateByAddingTimeInterval: -2 * (24 * 60 * 60)];
-    
     NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:now];
-    
+    // 获取前几天的时间
+//    components.day = -7;
     
     NSDate *startDate = [calendar dateFromComponents:components];
     NSDate *endDate = [calendar dateByAddingUnit:NSCalendarUnitDay value:3 toDate:startDate options:0];
